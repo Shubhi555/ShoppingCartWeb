@@ -21,13 +21,12 @@ const Navbar = () => {
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
-          setCart(data); // update cart count
+          setCart(data); 
         }
       })
       .catch((err) => console.log("Cart fetch error:", err));
   }, []);
 
-  // ------------------ LOGIN CONTROLS ------------------
   const openLogin = () => {
     setShowLogin(true);
     setIsSignup(false);
@@ -70,7 +69,6 @@ const Navbar = () => {
     }
   };
 
-  // ------------------ UI ------------------
   return (
     <div className="container lg:block relative">
       <div className="flex justify-between items-center pt-8">
@@ -83,7 +81,6 @@ const Navbar = () => {
 
         </h1>
 
-        {/* SEARCH BAR */}
         <div className="relative w-full max-w-[500px]">
           <input
             className=" bg-[#f2f3f5] border-none outline-none px-6 py-3 rounded-[30px] w-full"
@@ -96,7 +93,6 @@ const Navbar = () => {
           />
         </div>
 
-        {/* USER + CART ICONS */}
         <div className="flex gap-4">
           <div className="icon_wrapper" onClick={openLogin}>
             <FaRegUser />
@@ -111,7 +107,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* LOGIN / SIGNUP MODAL */}
       {showLogin && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-xl p-8 w-[350px] relative shadow-lg">
