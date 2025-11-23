@@ -1,5 +1,5 @@
 
-let users = [];   // temporary in-memory users list
+let users = [];   
 
 exports.createUser = (req, res) => {
   const { username, password } = req.body;
