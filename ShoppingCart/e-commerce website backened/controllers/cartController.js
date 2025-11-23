@@ -10,7 +10,7 @@ exports.addToCart = (req, res) => {
   const existing = cart.find(c => c.id === item.id);
 
   if (existing) {
-    existing.qty += 1; // increase quantity
+    existing.qty += 1; 
   } else {
     cart.push({ ...item, qty: 1 });
   }
