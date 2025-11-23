@@ -1,16 +1,12 @@
-// routes/orderRoutes.js
 const express = require("express");
 const router = express.Router();
 
 let orders = [];
-let cart = []; // temporary (until database is added)
-
-// GET all orders
+let cart = []; 
 router.get("/", (req, res) => {
   res.json(orders);
 });
 
-// Convert cart to order
 router.post("/", (req, res) => {
   const newOrder = {
     id: orders.length + 1,
@@ -20,7 +16,7 @@ router.post("/", (req, res) => {
   };
 
   orders.push(newOrder);
-  cart = []; // empty cart after ordering
+  cart = [];\
 
   res.json({
     message: "Order created successfully",
