@@ -4,14 +4,11 @@ const connectDB = require("./config/db");
 
 const app = express();
 
-// middlewares
 app.use(cors());
 app.use(express.json());
 
-// connect database
 connectDB();
 
-// routes
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/items", require("./routes/itemRoutes"));
 app.use("/api/carts", require("./routes/cartRoutes"));
