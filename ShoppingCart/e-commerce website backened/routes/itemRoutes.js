@@ -7,12 +7,11 @@ let items = [
   { id: 3, name: "Canned Corn", price: 120, status: "Limited Stock" }
 ];
 
-// GET ALL ITEMS
+
 router.get("/", (req, res) => {
   res.json(items);
 });
 
-// POST NEW ITEM  ✅ This was missing
 router.post("/", (req, res) => {
   const newItem = req.body;
 
