@@ -6,14 +6,13 @@ interface Props {
 }
 
 const LoginModel: React.FC<Props> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null; // hides until user clicks icon
+  if (!isOpen) return null; 
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      {/* MODAL BOX */}
+
       <div className="bg-white p-6 rounded-xl w-[350px] relative shadow-xl">
 
-        {/* CLOSE BUTTON */}
         <button
           onClick={onClose}
           className="absolute top-3 right-3 bg-red-500 text-white w-7 h-7 rounded-full flex justify-center items-center text-lg"
