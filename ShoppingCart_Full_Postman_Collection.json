@@ -1,0 +1,160 @@
+{
+    "info": {
+        "name": "ShoppingCart Full API Collection",
+        "_postman_id": "shoppingcart-full-collection-001",
+        "description": "Full API collection for ShoppingCart backend",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Users",
+            "item": [
+                {
+                    "name": "Create User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\": \"testuser\", \"password\": \"123456\"}"
+                        },
+                        "url": "{{baseUrl}}/api/users"
+                    }
+                },
+                {
+                    "name": "Login User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\": \"testuser\", \"password\": \"123456\"}"
+                        },
+                        "url": "{{baseUrl}}/api/users/login"
+                    }
+                },
+                {
+                    "name": "Get All Users",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/api/users"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Items",
+            "item": [
+                {
+                    "name": "Get All Items",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/api/items"
+                    }
+                },
+                {
+                    "name": "Add Item",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"New Item\", \"price\": 100, \"status\": \"In Stock\"}"
+                        },
+                        "url": "{{baseUrl}}/api/items"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cart",
+            "item": [
+                {
+                    "name": "Get Cart",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/api/carts"
+                    }
+                },
+                {
+                    "name": "Add to Cart",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"id\": 1, \"name\": \"Fresh Mango\", \"price\": 80}"
+                        },
+                        "url": "{{baseUrl}}/api/carts"
+                    }
+                },
+                {
+                    "name": "Remove From Cart",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{baseUrl}}/api/carts/{{cartId}}"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Orders",
+            "item": [
+                {
+                    "name": "Get All Orders",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/api/orders"
+                    }
+                },
+                {
+                    "name": "Create Order",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"cart\": [{\"id\": 1, \"name\": \"Fresh Mango\", \"price\": 80}]}"
+                        },
+                        "url": "{{baseUrl}}/api/orders"
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:5000"
+        },
+        {
+            "key": "cartId",
+            "value": "1"
+        }
+    ]
+}
